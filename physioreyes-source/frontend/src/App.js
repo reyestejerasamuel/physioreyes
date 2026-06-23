@@ -1,13 +1,13 @@
-import "@/App.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
-import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/Hero";
-import { About } from "@/components/About";
-import { Services } from "@/components/Services";
-import { Blog } from "@/components/Blog";
-import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
+import { Nav } from "./components/Nav";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Services } from "./components/Services";
+import { Blog } from "./components/Blog";
+import { Contact } from "./components/Contact";
+import { Footer } from "./components/Footer";
 
 const Landing = () => {
   return (
