@@ -4,7 +4,6 @@ import { Send, Instagram, Linkedin, Mail, MapPin, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { ReyesSignature } from "./Signature";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const INTERESTS = [
   "Readaptación deportiva",
@@ -35,9 +34,12 @@ export const Contact = () => {
     }
     setSubmitting(true);
     try {
-      await axios.post(`${API}/contacts`, form);
+     await axios.post(
+  "https://formspree.io/f/mgojvnpg",
+  form
+);
       toast.success("¡Mensaje enviado!", {
-        description: "Te contesto en menos de 24h. Gracias por confiar.",
+        description: "Te contesto lo antes posible. Gracias por confiar.",
       });
       setForm({
         name: "",
