@@ -33,14 +33,16 @@ export const Contact = () => {
       return;
     }
     setSubmitting(true);
-    try {
-     await axios.post(
-  "https://formspree.io/f/mgojvnpg",
-  form
-);
-      toast.success("¡Mensaje enviado!", {
-        description: "Te contesto lo antes posible. Gracias por confiar.",
-      });
+try {
+  await axios.post(
+    "https://formspree.io/f/mgojvnpg",
+    form,
+    {
+      headers: {
+        Accept: "application/json",
+      },
+    }
+  );
       setForm({
         name: "",
         email: "",
