@@ -11,7 +11,14 @@ export const Blog = () => {
     let alive = true;
     axios
       .get(`${API}/articles`)
-      .then((r) => alive && setArticles(r.data))
+      .then((r) => {
+  console.log("API:", r.data);
+  if (Array.isArray(r.data)) {
+    setArticles(r.data);
+  } else {
+    setArticles([]);
+  }
+})
       .catch(() => {});
     return () => {
       alive = false;
